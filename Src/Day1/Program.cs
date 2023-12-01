@@ -1,11 +1,4 @@
 ﻿using Businesslogic;
-using Businesslogic.Extensions;
-using Businesslogic.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Drawing;
-using Pastel;
 
 namespace Day1
 {
@@ -13,7 +6,7 @@ namespace Day1
     {
         static void Main(string[] args)
         {
-            Helper.WriteResult(Test1, FileType.Test1Sample);
+            Helper.WriteResult(Test1, FileType.Test1Sample,0);
             //Helper.WriteResult(Test1, FileType.Test1);
             //Helper.WriteResult(Test2, FileType.Test2Sample);
             //Helper.WriteResult(Test2, FileType.Test2);

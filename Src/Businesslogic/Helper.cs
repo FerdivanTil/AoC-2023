@@ -18,7 +18,7 @@ namespace Businesslogic
             var text = System.IO.File.ReadAllText(filename);
             return text.Split(Environment.NewLine).ToList();
         }
-        public static void WriteResult(Func<List<string>,int> func, FileType fileType, int result)
+        public static void WriteResult(Func<List<string>,int> func, FileType fileType, int result = 0)
         {
             WriteResult((x) => func(x).ToString(), fileType, result.ToString());
         }
@@ -27,6 +27,11 @@ namespace Businesslogic
         {
             var result1Test = func(GetFileContents(fileType));
             Console.WriteLine($"Result of {fileType} is: {result1Test.Pastel(Color.Red)}");
+            if (result == "0")
+            {
+                return;
+            }
+
             var resultString = new StringBuilder();
             resultString.Append(result).Append(" == ").Append(result1Test);
             resultString.Append(result == result1Test ? "CORRECT".Pastel(Color.Green) : "INCORRECT".Pastel(Color.Red));
@@ -34,7 +39,7 @@ namespace Businesslogic
             Console.WriteLine($"Result of {fileType} is: {resultString}");
         }
 
-        public static void WriteResult(Func<List<string>, long> func, FileType fileType, int result)
+        public static void WriteResult(Func<List<string>, long> func, FileType fileType, int result = 0)
         {
             WriteResult((x) => func(x).ToString(), fileType, result.ToString());
         }

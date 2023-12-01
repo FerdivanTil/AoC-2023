@@ -6,9 +6,9 @@ namespace Template
     {
         static void Main(string[] args)
         {
-            Helper.WriteResult(Test1, FileType.Test1Sample,0);
-            //Helper.WriteResult(Test1, FileType.Test1);
-            //Helper.WriteResult(Test2, FileType.Test2Sample);
+            Helper.WriteResult(Test1, FileType.Test1Sample, 0);
+            //Helper.WriteResult(Test1, FileType.Test1, 0);
+            //Helper.WriteResult(Test2, FileType.Test2Sample, 0);
             //Helper.WriteResult(Test2, FileType.Test2);
         }
 
