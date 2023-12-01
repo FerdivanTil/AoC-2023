@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include=".day1.config\day1.json" />
+    <Compile Remove=".day1.config\**" />
+    <EmbeddedResource Remove=".day1.config\**" />
+    <None Remove=".day1.config\**" />
   </ItemGroup>
 
   <ItemGroup>

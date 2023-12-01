@@ -34,7 +34,7 @@ namespace Businesslogic
 
             var resultString = new StringBuilder();
             resultString.Append(result).Append(" == ").Append(result1Test);
-            resultString.Append(result == result1Test ? "CORRECT".Pastel(Color.Green) : "INCORRECT".Pastel(Color.Red));
+            resultString.Append(result == result1Test ? " CORRECT".Pastel(Color.Green) : " INCORRECT".Pastel(Color.Red));
 
             Console.WriteLine($"Result of {fileType} is: {resultString}");
         }
