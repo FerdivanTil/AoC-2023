@@ -16,5 +16,9 @@ namespace Businesslogic.Extensions
             return Enumerable.Range(0, str.Length / chunkSize)
                 .Select(i => str.Substring(i * chunkSize, chunkSize));
         }
+        public static bool IsNumeric(this string str)
+        {
+            return int.TryParse(str, out _);
+        }
     }
 }
