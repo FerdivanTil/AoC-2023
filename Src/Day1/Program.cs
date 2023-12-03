@@ -42,13 +42,17 @@ namespace Day1
                 input = input.Replace((x.Index + 1).ToString(), x.Value);
             }
             // Find the indexes of all the text numbers.
-            var value = allTextNumbers.Select(i => new { Index = input.IndexOf(i.Value), Value = i.Index + 1 })
+            var valueFirst = allTextNumbers.Select(i => new { Index = input.IndexOf(i.Value), Value = i.Index + 1 })
+                .Where(i => i.Index != -1)
+                .OrderBy(i => i.Index);
+
+            var valueLast = allTextNumbers.Select(i => new { Index = input.LastIndexOf(i.Value), Value = i.Index + 1 })
                 .Where(i => i.Index != -1)
                 .OrderBy(i => i.Index);
 
             // Get the first and the last.
-            var first = value.First().Value;
-            var last = value.Last().Value;
+            var first = valueFirst.First().Value;
+            var last = valueLast.Last().Value;
             return first * 10 + last;
         }
     }
